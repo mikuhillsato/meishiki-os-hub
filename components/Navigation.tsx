@@ -38,9 +38,9 @@ export default function Navigation() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-[17px] tracking-[0.25em] uppercase text-[#111111] hover:opacity-60 transition-opacity"
+          className="font-display text-[19px] tracking-[0.04em] text-[#111111] hover:opacity-60 transition-opacity"
         >
-          meishiki OS
+          meishikiOS
         </Link>
 
         {/* Desktop nav */}

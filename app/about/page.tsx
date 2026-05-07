@@ -157,27 +157,39 @@ export default function AboutPage() {
           </div>
 
           <AnimateIn>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#EAEAE6]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EAEAE6]">
               <a
-                href="https://www.instagram.com/miku_sugar_"
+                href="https://x.com/meishikiOS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#F4F4F2] p-8 flex items-center gap-4 group hover:bg-[#EAEAE6] transition-colors"
               >
-                <span className="font-display text-2xl text-[#CCCCCC] font-light">IG</span>
+                <span className="font-display text-2xl text-[#CCCCCC] font-light">𝕏</span>
                 <div>
-                  <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Instagram</p>
-                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">@miku_sugar_</p>
+                  <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">X</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">@meishikiOS</p>
                 </div>
               </a>
               <a
-                href="mailto:mikusbh@gmail.com"
+                href="https://note.com/meishiki_os"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F4F4F2] p-8 flex items-center gap-4 group hover:bg-[#EAEAE6] transition-colors"
+              >
+                <span className="font-display text-2xl text-[#CCCCCC] font-light">N</span>
+                <div>
+                  <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Note</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">meishiki_os</p>
+                </div>
+              </a>
+              <a
+                href="mailto:meishiki.os.info@gmail.com"
                 className="bg-[#F4F4F2] p-8 flex items-center gap-4 group hover:bg-[#EAEAE6] transition-colors"
               >
                 <span className="font-display text-2xl text-[#CCCCCC] font-light">@</span>
                 <div>
                   <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Email</p>
-                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">mikusbh@gmail.com</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">meishiki.os.info@gmail.com</p>
                 </div>
               </a>
             </div>
