@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/AnimateIn";
+import DiagnosisForm from "@/components/DiagnosisForm";
 
 export const metadata: Metadata = {
   title: "OS診断（無料）",
@@ -29,9 +30,9 @@ const cards = [
 ];
 
 const flow = [
-  { step: "i", label: "生年月日を入力", note: "出生時刻・出生地は任意" },
-  { step: "ii", label: "メールアドレスを入力", note: "詳細レポート受領用" },
-  { step: "iii", label: "ミニレポート表示", note: "PDF 3ページ相当・所要 約3分" },
+  { step: "i", label: "生年月日を入力", note: "出生時刻・出生地は任意。精度を上げたい場合のみ追加" },
+  { step: "ii", label: "4体系を統合計算", note: "自動・所要約10秒。背景タブにしても継続" },
+  { step: "iii", label: "ミニレポート表示", note: "才能・OSプロファイル・今年の運気を即座に表示" },
 ];
 
 export default function DiagnosisPage() {
@@ -65,11 +66,14 @@ export default function DiagnosisPage() {
             </h1>
             <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-xl mt-6">
               四柱推命・西洋占星術・算命学・数秘術——4体系を重ねた視点から、あなたの才能・OSの輪郭・今年の運気を言語化します。
-              生年月日のみで開始でき、出生時刻・出生地は任意。所要時間 約3分。
+              生年月日のみで開始でき、出生時刻・出生地は任意。所要時間 約10秒。
             </p>
           </AnimateIn>
         </div>
       </div>
+
+      {/* Form (primary action) */}
+      <DiagnosisForm />
 
       {/* What you get */}
       <div className="max-w-6xl mx-auto px-6 py-20">
@@ -116,28 +120,6 @@ export default function DiagnosisPage() {
           ))}
         </div>
 
-        {/* CTA */}
-        <AnimateIn>
-          <div className="bg-[#111111] text-[#F9F9F7] p-12 md:p-16 text-center">
-            <p className="text-[8px] tracking-[0.5em] uppercase text-[#666666] mb-5">Start Diagnosis</p>
-            <h2 className="font-display text-3xl md:text-4xl font-light mb-3 leading-tight">
-              生年月日を入れて、<br className="md:hidden" />
-              才能を知る。
-            </h2>
-            <p className="text-[11px] text-[#999999] tracking-wider mb-10 max-w-md mx-auto leading-loose">
-              4体系統合のミニレポート。無料。
-            </p>
-            <a
-              href="https://meishiki-os-diagnosis.vercel.app/"
-              className="inline-block bg-[#F9F9F7] text-[#111111] px-10 py-4 text-[9px] tracking-[0.3em] uppercase hover:bg-[#E0DDD6] transition-colors"
-            >
-              診断を始める →
-            </a>
-            <p className="text-[10px] tracking-[0.2em] text-[#666666] mt-6 uppercase">
-              meishiki-os-diagnosis.vercel.app
-            </p>
-          </div>
-        </AnimateIn>
       </div>
     </>
   );
