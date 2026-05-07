@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Noto_Sans_JP } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans_JP, Outfit } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -16,6 +16,12 @@ const noto = Noto_Sans_JP({
   variable: "--font-noto",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400"],
 });
 
 export const metadata: Metadata = {
@@ -47,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${cormorant.variable} ${noto.variable}`}>
+    <html lang="ja" className={`${cormorant.variable} ${noto.variable} ${outfit.variable}`}>
       <body className="min-h-screen flex flex-col">
         <ReadingProgress />
         <Navigation />

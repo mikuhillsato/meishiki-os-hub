@@ -33,14 +33,14 @@ export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#111111] bg-[#F9F9F7]/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-[#0C0A08] bg-[#EDE8E0]/95 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-[52px]">
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-[19px] tracking-[0.04em] text-[#111111] hover:opacity-60 transition-opacity"
+          className="logo-os text-[24px] hover:opacity-60 transition-opacity"
         >
-          meishikiOS
+          <span>meishiki</span><span className="os-mark">OS</span>
         </Link>
 
         {/* Desktop nav */}
@@ -57,20 +57,20 @@ export default function Navigation() {
                 href={item.href}
                 className={`text-[9px] tracking-[0.3em] uppercase transition-opacity py-2 ${
                   pathname.startsWith(item.href)
-                    ? "text-[#111111]"
-                    : "text-[#888888] hover:text-[#111111]"
+                    ? "text-[#0C0A08]"
+                    : "text-[#888888] hover:text-[#0C0A08]"
                 }`}
               >
                 {item.label}
               </Link>
               {item.sub.length > 0 && openDropdown === item.href && (
                 <div className="absolute top-full left-0 pt-2 w-52">
-                  <div className="bg-[#F9F9F7] border border-[#E0DDD6] shadow-sm py-2">
+                  <div className="bg-[#EDE8E0] border border-[#E0DDD6] shadow-sm py-2">
                     {item.sub.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="block px-4 py-2 text-[9px] tracking-wider text-[#888888] hover:text-[#111111] hover:bg-[#F4F4F2] transition-colors"
+                        className="block px-4 py-2 text-[9px] tracking-wider text-[#888888] hover:text-[#0C0A08] hover:bg-[#F4F4F2] transition-colors"
                       >
                         {s.label}
                       </Link>
@@ -84,7 +84,7 @@ export default function Navigation() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#111111]"
+          className="md:hidden text-[#0C0A08]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="メニューを開く"
         >
@@ -98,13 +98,13 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-[#E0DDD6] bg-[#F9F9F7]">
+        <div className="md:hidden border-t border-[#E0DDD6] bg-[#EDE8E0]">
           {nav.map((item) => (
             <div key={item.href}>
               <Link
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-6 py-3 text-[9px] tracking-[0.3em] uppercase text-[#111111] border-b border-[#E0DDD6]"
+                className="block px-6 py-3 text-[9px] tracking-[0.3em] uppercase text-[#0C0A08] border-b border-[#E0DDD6]"
               >
                 {item.label}
               </Link>

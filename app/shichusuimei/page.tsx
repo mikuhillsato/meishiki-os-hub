@@ -26,7 +26,7 @@ const subPages = [
 export default function ShichusuimeiPage() {
   return (
     <>
-      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Four Pillars of Destiny — meishiki OS
@@ -66,7 +66,7 @@ export default function ShichusuimeiPage() {
                 なお「時柱」は正確な出生時刻が必要になるため、時刻が不明な場合は年・月・日の三柱で読むこともある。
               </p>
             </div>
-            <div className="bg-[#111111] text-[#F9F9F7] p-8">
+            <div className="bg-[#0C0A08] text-[#EDE8E0] p-8">
               <p className="text-xs tracking-[0.2em] text-[#888888] mb-6 uppercase">Five Elements — 五行</p>
               <div className="space-y-3">
                 {[
@@ -91,7 +91,7 @@ export default function ShichusuimeiPage() {
 
         {/* What you can know */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-10">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">what you can know</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -112,7 +112,7 @@ export default function ShichusuimeiPage() {
               },
             ].map((item) => (
               <div key={item.title} className="bg-[#F4F4F2] p-8">
-                <h3 className="font-display text-xl font-light mb-4 text-[#111111]">{item.title}</h3>
+                <h3 className="font-display text-xl font-light mb-4 text-[#0C0A08]">{item.title}</h3>
                 <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
@@ -121,7 +121,7 @@ export default function ShichusuimeiPage() {
 
         {/* Simulation */}
         <section className="mb-12">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-8">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
             <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
@@ -131,7 +131,7 @@ export default function ShichusuimeiPage() {
 
         {/* Sub-pages */}
         <section>
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-0">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>

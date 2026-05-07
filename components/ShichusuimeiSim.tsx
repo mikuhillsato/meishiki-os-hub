@@ -113,7 +113,7 @@ export default function ShichusuimeiSim() {
 
   return (
     <div className="border border-[#E0DDD6]">
-      <div className="flex items-center h-[38px] border-b border-[#111111] px-5">
+      <div className="flex items-center h-[38px] border-b border-[#0C0A08] px-5">
         <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-4">簡易命式計算</span>
         <div className="flex-1 h-px bg-[#E0DDD6]" />
         <span className="text-[8px] tracking-[0.3em] text-[#CCC] ml-4">Four Pillars</span>
@@ -124,15 +124,15 @@ export default function ShichusuimeiSim() {
             <label className="block text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-2">生年月日</label>
             <div className="flex gap-1">
               <select value={year}  onChange={e => setYear(Number(e.target.value))}
-                className="border border-[#E0DDD6] px-2 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors">
+                className="border border-[#E0DDD6] px-2 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors">
                 {YEARS.map(y  => <option key={y}  value={y}>{y}年</option>)}
               </select>
               <select value={month} onChange={e => setMonth(Number(e.target.value))}
-                className="border border-[#E0DDD6] px-2 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors">
+                className="border border-[#E0DDD6] px-2 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors">
                 {MONTHS.map(m => <option key={m} value={m}>{m}月</option>)}
               </select>
               <select value={day}   onChange={e => setDay(Number(e.target.value))}
-                className="border border-[#E0DDD6] px-2 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors">
+                className="border border-[#E0DDD6] px-2 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors">
                 {DAYS.map(d   => <option key={d}  value={d}>{d}日</option>)}
               </select>
             </div>
@@ -142,11 +142,11 @@ export default function ShichusuimeiSim() {
             <input
               type="number" min={0} max={23} placeholder="例: 14"
               value={hour} onChange={e => setHour(e.target.value)}
-              className="w-24 border border-[#E0DDD6] px-3 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors"
+              className="w-24 border border-[#E0DDD6] px-3 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors"
             />
           </div>
           <div>
-            <button onClick={calculate} className="px-5 py-2 bg-[#111111] text-[#F9F9F7] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors">
+            <button onClick={calculate} className="px-5 py-2 bg-[#0C0A08] text-[#EDE8E0] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors">
               計算
             </button>
           </div>
@@ -166,9 +166,9 @@ export default function ShichusuimeiSim() {
                 ].map(({ label, pillar }) => (
                   <div key={label} className="bg-[#F4F4F2] p-3 text-center">
                     <p className="text-[8px] text-[#888888] mb-1">{label}</p>
-                    <p className="font-display text-xl font-light text-[#111111]">{pillar.tiangan}</p>
+                    <p className="font-display text-xl font-light text-[#0C0A08]">{pillar.tiangan}</p>
                     <p className="text-[9px] text-[#555555]">{WUXING_TIANGAN[pillar.tiangan]}</p>
-                    <p className="font-display text-xl font-light text-[#111111] mt-1">{pillar.dizhi}</p>
+                    <p className="font-display text-xl font-light text-[#0C0A08] mt-1">{pillar.dizhi}</p>
                     <p className="text-[9px] text-[#555555]">{WUXING_DIZHI[pillar.dizhi]}</p>
                   </div>
                 ))}
@@ -177,7 +177,7 @@ export default function ShichusuimeiSim() {
 
             {/* Day Master */}
             {elementCfg && (
-              <div className="bg-[#111111] p-5 text-[#F9F9F7]">
+              <div className="bg-[#0C0A08] p-5 text-[#EDE8E0]">
                 <p className="text-[8px] tracking-[0.4em] uppercase mb-3" style={{ color: "#555" }}>日主（あなたの本質）</p>
                 <div className="flex items-center gap-4">
                   <div>
@@ -214,7 +214,7 @@ export default function ShichusuimeiSim() {
 
             {/* Reading */}
             {readingText && (
-              <div style={{ backgroundColor: "#111111" }} className="p-6">
+              <div style={{ backgroundColor: "#0C0A08" }} className="p-6">
                 <p className="text-[8px] tracking-[0.5em] uppercase mb-5" style={{ color: "#555555" }}>
                   Reading — 命式が語ること
                 </p>

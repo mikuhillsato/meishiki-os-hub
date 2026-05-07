@@ -23,7 +23,7 @@ const tenGods = [
 export default function SanmeigakuPage() {
   return (
     <>
-      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Sanmeigaku — meishiki OS
@@ -76,7 +76,7 @@ export default function SanmeigakuPage() {
                 { term: "位相法（いそうほう）", desc: "十二支同士の関係性（合・冲・害など）が示す人間関係のパターン。" },
               ].map((item) => (
                 <div key={item.term} className="border-b border-[#D0CCC4] pb-3">
-                  <p className="text-sm font-display text-[#111111] mb-1">{item.term}</p>
+                  <p className="text-sm font-display text-[#0C0A08] mb-1">{item.term}</p>
                   <p className="text-xs text-[#888888] tracking-wider">{item.desc}</p>
                 </div>
               ))}
@@ -86,7 +86,7 @@ export default function SanmeigakuPage() {
 
         {/* Difference from Shichusuimei */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-10">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">vs. 四柱推命</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -103,7 +103,7 @@ export default function SanmeigakuPage() {
                   "日本で体系化・発展",
                 ].map((item) => (
                   <li key={item} className="flex gap-2 items-start text-xs text-[#888888] tracking-wider">
-                    <span className="text-[#111111] mt-0.5">—</span>
+                    <span className="text-[#0C0A08] mt-0.5">—</span>
                     {item}
                   </li>
                 ))}
@@ -121,7 +121,7 @@ export default function SanmeigakuPage() {
                   "中国から直接継承・日本でも普及",
                 ].map((item) => (
                   <li key={item} className="flex gap-2 items-start text-xs text-[#888888] tracking-wider">
-                    <span className="text-[#111111] mt-0.5">—</span>
+                    <span className="text-[#0C0A08] mt-0.5">—</span>
                     {item}
                   </li>
                 ))}
@@ -132,7 +132,7 @@ export default function SanmeigakuPage() {
 
         {/* Simulation */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-8">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
             <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
@@ -150,7 +150,7 @@ export default function SanmeigakuPage() {
             {tenGods.map((god) => (
               <div key={god.name} className="bg-[#F4F4F2] p-8">
                 <h3 className="font-display text-2xl font-light mb-1">{god.name}</h3>
-                <p className="text-xs text-[#111111] tracking-wider mb-3">{god.keyword}</p>
+                <p className="text-xs text-[#0C0A08] tracking-wider mb-3">{god.keyword}</p>
                 <p className="text-sm text-[#555555] leading-loose tracking-wider">{god.desc}</p>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function SanmeigakuPage() {
 
           {/* Note */}
           <div className="mt-12 border border-[#D0CCC4] p-8">
-            <p className="text-xs tracking-[0.2em] text-[#111111] mb-3 uppercase">Note — 守護神について</p>
+            <p className="text-xs tracking-[0.2em] text-[#0C0A08] mb-3 uppercase">Note — 守護神について</p>
             <p className="text-sm text-[#555555] leading-loose tracking-wider">
               算命学の守護神とは、命式の五行バランスを整えるために必要な五行の「神」のこと。
               たとえば木のエネルギーが過剰な命式には、それを適度に剋する（切る）「金」が守護神になる場合がある。

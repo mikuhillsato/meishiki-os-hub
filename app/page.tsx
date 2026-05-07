@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ParallaxBand from "@/components/ParallaxBand";
+import OrbitalMotif from "@/components/OrbitalMotif";
 
 export const metadata: Metadata = {
   title: "meishiki OS | 命式は、あなたのOSだ。",
@@ -91,7 +92,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <div className="grid border-b border-[#111111] grid-cols-[52px_1fr] md:grid-cols-[52px_1fr_320px]">
+      <div className="grid border-b border-[#0C0A08] grid-cols-[52px_1fr] md:grid-cols-[52px_1fr_320px]">
         {/* 縦ラベル */}
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{
@@ -108,7 +109,7 @@ export default function Home() {
         </div>
 
         {/* 本文 */}
-        <div className="px-6 md:px-12 py-10 md:py-16 md:border-r border-[#111111] flex flex-col justify-between min-h-[380px] md:min-h-[480px]">
+        <div className="px-6 md:px-12 py-10 md:py-16 md:border-r border-[#0C0A08] flex flex-col justify-between min-h-[380px] md:min-h-[480px]">
           <div>
             <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-7">
               占いは、当てるものじゃない。知るためのものだ。
@@ -123,13 +124,13 @@ export default function Home() {
           <div className="flex items-center flex-wrap gap-2">
             <Link
               href="/shichusuimei"
-              className="text-[9px] tracking-[0.3em] uppercase px-7 py-3 bg-[#111111] text-[#F9F9F7] hover:bg-[#333333] transition-colors"
+              className="text-[9px] tracking-[0.3em] uppercase px-7 py-3 bg-[#0C0A08] text-[#EDE8E0] hover:bg-[#333333] transition-colors"
             >
               探索する
             </Link>
             <Link
               href="#systems"
-              className="text-[9px] tracking-[0.2em] uppercase px-6 py-3 text-[#888888] hover:text-[#111111] transition-colors flex items-center gap-2"
+              className="text-[9px] tracking-[0.2em] uppercase px-6 py-3 text-[#888888] hover:text-[#0C0A08] transition-colors flex items-center gap-2"
             >
               <span className="inline-block w-4 h-px bg-[#CCC]" />
               占術を選ぶ
@@ -137,32 +138,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ホロスコープチャート - hidden on mobile */}
-        <div className="hidden md:flex items-center justify-center p-10 bg-[#F9F9F7]">
-          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[220px] h-[220px]">
-            <circle cx="120" cy="120" r="108" stroke="#111" strokeWidth="0.8"/>
-            <circle cx="120" cy="120" r="82"  stroke="#111" strokeWidth="0.5"/>
-            <circle cx="120" cy="120" r="44"  stroke="#CCC" strokeWidth="0.5"/>
-            <circle cx="120" cy="120" r="3"   fill="#111"/>
-            {[0,30,60,90,120,150,180,210,240,270,300,330].map(deg => (
-              <line key={deg} x1="120" y1="12" x2="120" y2="38" stroke="#111" strokeWidth="0.6" transform={`rotate(${deg} 120 120)`}/>
-            ))}
-            <line x1="12"  y1="120" x2="228" y2="120" stroke="#111" strokeWidth="0.8"/>
-            <line x1="120" y1="12"  x2="120" y2="228" stroke="#111" strokeWidth="0.8"/>
-            <line x1="172" y1="28"  x2="68"  y2="212" stroke="#BBB" strokeWidth="0.5" strokeDasharray="3 4"/>
-            <line x1="212" y1="172" x2="28"  y2="68"  stroke="#BBB" strokeWidth="0.5" strokeDasharray="3 4"/>
-            <line x1="172" y1="212" x2="68"  y2="28"  stroke="#DDD" strokeWidth="0.4" strokeDasharray="2 5"/>
-            <circle cx="172" cy="28"  r="3.5" fill="#111"/>
-            <circle cx="212" cy="172" r="3.5" fill="#111"/>
-            <circle cx="68"  cy="212" r="2.5" fill="#888"/>
-            <circle cx="28"  cy="68"  r="2.5" fill="#888"/>
-            <circle cx="68"  cy="28"  r="2"   fill="#DDD" stroke="#AAA" strokeWidth="0.6"/>
-            <circle cx="196" cy="88"  r="2"   fill="#DDD" stroke="#AAA" strokeWidth="0.6"/>
-            <text x="122" y="9"   fontSize="8" fill="#888" fontFamily="Georgia,serif">MC</text>
-            <text x="5"   y="123" fontSize="8" fill="#888" fontFamily="Georgia,serif">ASC</text>
-            <text x="122" y="238" fontSize="8" fill="#DDD" fontFamily="Georgia,serif">IC</text>
-            <text x="204" y="123" fontSize="8" fill="#DDD" fontFamily="Georgia,serif">DSC</text>
-          </svg>
+        {/* Orbital Blueprint motif - hidden on mobile */}
+        <div className="hidden md:flex items-center justify-center p-10 bg-[#EDE8E0]">
+          <OrbitalMotif />
         </div>
       </div>
 
@@ -172,7 +150,7 @@ export default function Home() {
       {/* SYSTEMS */}
       <div id="systems">
         {/* ヘッダー */}
-        <div className="flex items-center px-6 h-[38px] border-b border-[#111111]">
+        <div className="flex items-center px-6 h-[38px] border-b border-[#0C0A08]">
           <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">Four Systems</span>
           <div className="flex-1 h-px bg-[#E0DDD6]" />
           <span className="font-display text-[11px] text-[#CCC] ml-5 tracking-[0.1em]">i — iv</span>
@@ -208,7 +186,7 @@ export default function Home() {
       {/* PHILOSOPHY */}
       <section
         className="py-10 px-6 md:py-16 md:px-12 flex flex-col gap-6 md:grid md:gap-x-10 md:items-start md:grid-cols-[80px_1fr_1fr]"
-        style={{ backgroundColor: "#111111" }}
+        style={{ backgroundColor: "#0C0A08" }}
       >
         <div className="hidden md:block font-display text-[120px] leading-[0.7] italic" style={{ color: "#2A2A2A" }}>&ldquo;</div>
         <div>
@@ -216,7 +194,7 @@ export default function Home() {
             Philosophy
             <span className="flex-1 h-px" style={{ background: "#2A2A2A" }} />
           </p>
-          <p className="font-display text-[26px] md:text-[30px] font-light italic leading-relaxed" style={{ color: "#F9F9F7" }}>
+          <p className="font-display text-[26px] md:text-[30px] font-light italic leading-relaxed" style={{ color: "#EDE8E0" }}>
             「知ること」は、<br />
             「選ぶこと」の始まり。
           </p>

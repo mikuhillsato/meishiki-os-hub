@@ -135,7 +135,7 @@ const ELEMENT_LABEL: Record<string, string> = { 火: "Fire", 地: "Earth", 風: 
 export default function SignsPage() {
   return (
     <>
-      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Signs — Western Astrology
@@ -143,7 +143,7 @@ export default function SignsPage() {
         </div>
         <div className="px-4 md:px-12 py-6 md:py-12">
           <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
-            <Link href="/astrology" className="hover:text-[#111111] transition-colors">西洋占星術</Link>
+            <Link href="/astrology" className="hover:text-[#0C0A08] transition-colors">西洋占星術</Link>
             <span>/</span>
             <span>12星座の意味</span>
           </div>
@@ -167,9 +167,9 @@ export default function SignsPage() {
             { el: "水", en: "Water", signs: "蟹・蠍・魚" },
           ].map(e => (
             <div key={e.el} className="flex items-center gap-3">
-              <div className="w-px h-8 bg-[#111111] shrink-0" />
+              <div className="w-px h-8 bg-[#0C0A08] shrink-0" />
               <div>
-                <p className="font-display text-lg font-light text-[#111111]">{e.el} <span className="text-[#888888] text-sm">{e.en}</span></p>
+                <p className="font-display text-lg font-light text-[#0C0A08]">{e.el} <span className="text-[#888888] text-sm">{e.en}</span></p>
                 <p className="text-[9px] tracking-wider text-[#888888]">{e.signs}</p>
               </div>
             </div>
@@ -181,14 +181,14 @@ export default function SignsPage() {
           {signs.map((s) => (
             <div key={s.name} className="bg-[#F4F4F2] p-8">
               <div className="flex items-start justify-between mb-4">
-                <ZodiacGlyph sign={s.name} size={48} color="#111111" />
+                <ZodiacGlyph sign={s.name} size={48} color="#0C0A08" />
                 <div className="text-right">
                   <p className="text-[8px] tracking-[0.3em] uppercase text-[#888888]">{s.element} — {ELEMENT_LABEL[s.element]}</p>
                   <p className="text-[8px] tracking-[0.25em] text-[#AAAAAA] mt-0.5">{s.quality} / ♟ {s.ruler}</p>
                 </div>
               </div>
               <p className="text-[8px] tracking-[0.3em] uppercase text-[#888888] mb-1">{s.en}</p>
-              <h2 className="font-display text-2xl font-light mb-1 text-[#111111]">{s.name}</h2>
+              <h2 className="font-display text-2xl font-light mb-1 text-[#0C0A08]">{s.name}</h2>
               <p className="text-[9px] tracking-[0.25em] text-[#888888] mb-4">{s.period} — {s.keyword}</p>
               <p className="text-sm text-[#555555] leading-loose tracking-wider">{s.desc}</p>
             </div>
@@ -205,7 +205,7 @@ export default function SignsPage() {
 
         {/* Related pages */}
         <section>
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-0">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>

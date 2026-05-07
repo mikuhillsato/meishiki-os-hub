@@ -103,7 +103,7 @@ const categories = [
 export default function StarsPage() {
   return (
     <>
-      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Stems & Stars — Shichusuimei
@@ -111,7 +111,7 @@ export default function StarsPage() {
         </div>
         <div className="px-4 md:px-12 py-6 md:py-12">
           <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
-            <Link href="/shichusuimei" className="hover:text-[#111111] transition-colors">四柱推命</Link>
+            <Link href="/shichusuimei" className="hover:text-[#0C0A08] transition-colors">四柱推命</Link>
             <span>/</span>
             <span>十干・十二支と星の意味</span>
           </div>
@@ -139,7 +139,7 @@ export default function StarsPage() {
                   <p className="text-xs text-[#888888] mt-1 tracking-wider">{s.reading}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#111111] tracking-wider mb-2">{s.element}</p>
+                  <p className="text-xs text-[#0C0A08] tracking-wider mb-2">{s.element}</p>
                   <p className="text-sm text-[#555555] leading-loose tracking-wider">{s.nature}</p>
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function StarsPage() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-[#EAEAE6] mb-12">
             {categories.map((cat) => (
               <div key={cat.name} className="bg-[#F4F4F2] p-5 text-center">
-                <p className="text-xs text-[#111111] tracking-wider mb-2">{cat.stars.join(" / ")}</p>
+                <p className="text-xs text-[#0C0A08] tracking-wider mb-2">{cat.stars.join(" / ")}</p>
                 <p className="font-display text-sm font-light leading-snug mb-2">{cat.name}</p>
                 <p className="text-xs text-[#888888] tracking-wider">{cat.desc}</p>
               </div>
@@ -176,14 +176,14 @@ export default function StarsPage() {
               <div key={star.name} className="bg-[#F4F4F2] p-8">
                 <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-6">
                   <div>
-                    <p className="font-display text-3xl font-light text-[#111111] mb-1">{star.name}</p>
+                    <p className="font-display text-3xl font-light text-[#0C0A08] mb-1">{star.name}</p>
                     <p className="text-xs text-[#888888] tracking-wider mb-1">{star.en}</p>
                     <span className="inline-block text-xs border border-[#D0CCC4] text-[#888888] px-2 py-0.5 tracking-wider">
                       {star.category}
                     </span>
                   </div>
                   <div>
-                    <p className="text-xs text-[#111111] tracking-wider mb-3">{star.keyword}</p>
+                    <p className="text-xs text-[#0C0A08] tracking-wider mb-3">{star.keyword}</p>
                     <p className="text-sm text-[#555555] leading-loose tracking-wider">{star.desc}</p>
                   </div>
                 </div>

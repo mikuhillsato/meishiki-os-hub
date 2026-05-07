@@ -143,7 +143,7 @@ function BodyDiagram({ chart }: { chart: ChartData }) {
             width={61} height={98} fill="#D8D5D0" fillOpacity="0.65"
           />
           <text x={cx(cell.col)} y={cy(cell.row) - 14} fill="#999999" fontSize="7"    textAnchor="middle" fontFamily="sans-serif">{cell.pos}</text>
-          <text x={cx(cell.col)} y={cy(cell.row) + 2}  fill="#111111" fontSize="10.5" textAnchor="middle" dominantBaseline="middle" fontFamily="serif">{cell.info.star.name}</text>
+          <text x={cx(cell.col)} y={cy(cell.row) + 2}  fill="#0C0A08" fontSize="10.5" textAnchor="middle" dominantBaseline="middle" fontFamily="serif">{cell.info.star.name}</text>
           <text x={cx(cell.col)} y={cy(cell.row) + 18} fill="#888888" fontSize="6.5"  textAnchor="middle" fontFamily="sans-serif">{cell.info.star.short}</text>
         </g>
       ))}
@@ -181,11 +181,11 @@ export default function SanmeiSim() {
     });
   }
 
-  const selectCls = "border border-[#E0DDD6] px-2 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors";
+  const selectCls = "border border-[#E0DDD6] px-2 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors";
 
   return (
     <div className="border border-[#E0DDD6]">
-      <div className="flex items-center h-[38px] border-b border-[#111111] px-5">
+      <div className="flex items-center h-[38px] border-b border-[#0C0A08] px-5">
         <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-4">簡易命式計算</span>
         <div className="flex-1 h-px bg-[#E0DDD6]" />
         <span className="text-[8px] tracking-[0.3em] text-[#CCC] ml-4">Sanmeigaku</span>
@@ -208,7 +208,7 @@ export default function SanmeiSim() {
               </select>
             </div>
           </div>
-          <button onClick={calculate} className="px-5 py-2 bg-[#111111] text-[#F9F9F7] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors">
+          <button onClick={calculate} className="px-5 py-2 bg-[#0C0A08] text-[#EDE8E0] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors">
             計算
           </button>
         </div>
@@ -227,7 +227,7 @@ export default function SanmeiSim() {
                 ].map(({ label, combined, animal }) => (
                   <div key={label} className="bg-[#F4F4F2] p-3 text-center">
                     <p className="text-[8px] text-[#888888] mb-1">{label}</p>
-                    <p className="font-display text-2xl font-light text-[#111111]">{combined}</p>
+                    <p className="font-display text-2xl font-light text-[#0C0A08]">{combined}</p>
                     <p className="text-[10px] text-[#888888] mt-1">{animal}</p>
                   </div>
                 ))}
@@ -237,21 +237,21 @@ export default function SanmeiSim() {
             {/* Body diagram */}
             <div>
               <p className="text-[8px] tracking-[0.4em] uppercase text-[#888888] mb-3">人体図 — 宿命星の配置</p>
-              <div className="bg-[#F9F9F7] flex justify-center p-5">
+              <div className="bg-[#EDE8E0] flex justify-center p-5">
                 <BodyDiagram chart={chart} />
               </div>
             </div>
 
             {/* Day master block */}
-            <div className="bg-[#111111] p-5">
+            <div className="bg-[#0C0A08] p-5">
               <p className="text-[8px] tracking-[0.4em] uppercase mb-4" style={{ color: "#555" }}>主星（日干の宿命星）</p>
               <div className="flex items-start gap-5">
                 <div className="text-center shrink-0">
-                  <p className="font-display text-5xl font-light text-[#F9F9F7]">{chart.dayMaster}</p>
+                  <p className="font-display text-5xl font-light text-[#EDE8E0]">{chart.dayMaster}</p>
                   <p className="text-[8px] tracking-[0.2em] uppercase mt-1 text-[#888888]">{chart.dayMasterElement}</p>
                 </div>
                 <div>
-                  <p className="font-display text-2xl font-light text-[#F9F9F7] mb-1">{TEN_STARS[chart.dayMaster]?.name}</p>
+                  <p className="font-display text-2xl font-light text-[#EDE8E0] mb-1">{TEN_STARS[chart.dayMaster]?.name}</p>
                   <p className="text-xs tracking-wider text-[#888888] mb-2">{TEN_STARS[chart.dayMaster]?.keyword}</p>
                   <p className="text-xs text-[#888888] leading-relaxed tracking-wider">{TEN_STARS[chart.dayMaster]?.desc}</p>
                 </div>
@@ -259,7 +259,7 @@ export default function SanmeiSim() {
             </div>
 
             {/* Reading */}
-            <div style={{ backgroundColor: "#111111" }} className="p-6">
+            <div style={{ backgroundColor: "#0C0A08" }} className="p-6">
               <p className="text-[8px] tracking-[0.5em] uppercase mb-5" style={{ color: "#555555" }}>
                 Reading — 命式が語ること
               </p>

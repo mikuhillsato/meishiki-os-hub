@@ -33,7 +33,7 @@ export default function AstrologyPage() {
   return (
     <>
       {/* Page header */}
-      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Western Astrology — meishiki OS
@@ -80,7 +80,7 @@ export default function AstrologyPage() {
                   { term: "アセンダント", desc: "外側への見せ方・入り口（上昇宮）" },
                 ].map((item) => (
                   <li key={item.term} className="flex gap-4 items-baseline">
-                    <span className="font-display text-[#111111] text-lg font-light w-28 shrink-0">
+                    <span className="font-display text-[#0C0A08] text-lg font-light w-28 shrink-0">
                       {item.term}
                     </span>
                     <span className="text-xs text-[#888888] tracking-wider">{item.desc}</span>
@@ -93,7 +93,7 @@ export default function AstrologyPage() {
 
         {/* Three main axes */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-10">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">three luminaries</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -135,7 +135,7 @@ export default function AstrologyPage() {
 
         {/* DSC & MC */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-10">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">angles</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -178,7 +178,7 @@ export default function AstrologyPage() {
 
         {/* Simulation */}
         <section className="mb-12">
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-8">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
             <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
@@ -188,7 +188,7 @@ export default function AstrologyPage() {
 
         {/* Sub-pages */}
         <section>
-          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-0">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
