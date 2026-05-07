@@ -9,12 +9,12 @@ export default function OrbitalMotif() {
         <line x1="120" y1="0"   x2="120" y2="240" stroke="#D8D2C5" strokeWidth="0.3" />
 
         {/* center sun */}
-        <circle cx="120" cy="120" r="2.5" fill="#0C0A08" />
-        <circle cx="120" cy="120" r="6"   fill="none" stroke="#0C0A08" strokeWidth="0.4" />
+        <circle cx="120" cy="120" r="2.5" fill="#111111" />
+        <circle cx="120" cy="120" r="6"   fill="none" stroke="#111111" strokeWidth="0.4" />
 
         {/* orbit 1: solid ellipse, slow rotation */}
         <g style={{ transformOrigin: "120px 120px", animation: "orbit 36s linear infinite" }}>
-          <ellipse cx="120" cy="120" rx="92" ry="56" stroke="#0C0A08" strokeWidth="0.5" fill="none" />
+          <ellipse cx="120" cy="120" rx="92" ry="56" stroke="#111111" strokeWidth="0.5" fill="none" />
           {/* purple planet at orbit edge */}
           <circle cx="212" cy="120" r="9"   fill="#6D28D9" opacity="0.18" />
           <circle cx="212" cy="120" r="3.5" fill="#6D28D9" />
@@ -36,8 +36,8 @@ export default function OrbitalMotif() {
 
         {/* orbit 3: small inner ellipse */}
         <g style={{ transformOrigin: "120px 120px", animation: "orbit 18s linear infinite" }}>
-          <ellipse cx="120" cy="120" rx="38" ry="58" stroke="#0C0A08" strokeWidth="0.35" fill="none" />
-          <circle cx="158" cy="120" r="2" fill="#0C0A08" />
+          <ellipse cx="120" cy="120" rx="38" ry="58" stroke="#111111" strokeWidth="0.35" fill="none" />
+          <circle cx="158" cy="120" r="2" fill="#111111" />
         </g>
 
         {/* corner coordinates (DM Mono風 / 製図) */}

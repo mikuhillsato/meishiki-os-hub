@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             About — meishiki OS
@@ -70,7 +70,7 @@ export default function AboutPage() {
                   },
                 ].map((item) => (
                   <div key={item.q} className="bg-[#F4F4F2] p-6">
-                    <p className="text-xs text-[#0C0A08] tracking-wider mb-2">Q. {item.q}</p>
+                    <p className="text-xs text-[#111111] tracking-wider mb-2">Q. {item.q}</p>
                     <p className="text-sm text-[#555555] leading-loose tracking-wider">A. {item.a}</p>
                   </div>
                 ))}
@@ -81,7 +81,7 @@ export default function AboutPage() {
 
         {/* For whom */}
         <section className="mb-24">
-          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-12">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-12">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">for whom</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
         {/* Vision */}
         <section className="mb-24">
           <AnimateIn>
-            <div className="bg-[#0C0A08] text-[#EDE8E0] p-12 md:p-16">
+            <div className="bg-[#111111] text-[#F9F9F7] p-12 md:p-16">
               <p className="font-display italic text-[#888888] text-lg mb-6">vision</p>
               <h2 className="font-display text-4xl font-light leading-snug mb-8">
                 占術を「ライフデザイン」の<br />
@@ -151,7 +151,7 @@ export default function AboutPage() {
 
         {/* Contact */}
         <section>
-          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-12">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-12">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">contact</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
                 <span className="font-display text-2xl text-[#CCCCCC] font-light">𝕏</span>
                 <div>
                   <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">X</p>
-                  <p className="text-sm text-[#0C0A08] tracking-wider group-hover:underline">@meishikiOS</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">@meishikiOS</p>
                 </div>
               </a>
               <a
@@ -179,7 +179,7 @@ export default function AboutPage() {
                 <span className="font-display text-2xl text-[#CCCCCC] font-light">N</span>
                 <div>
                   <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Note</p>
-                  <p className="text-sm text-[#0C0A08] tracking-wider group-hover:underline">meishiki_os</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">meishiki_os</p>
                 </div>
               </a>
               <a
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 <span className="font-display text-2xl text-[#CCCCCC] font-light">@</span>
                 <div>
                   <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-1">Email</p>
-                  <p className="text-sm text-[#0C0A08] tracking-wider group-hover:underline">meishiki.os.info@gmail.com</p>
+                  <p className="text-sm text-[#111111] tracking-wider group-hover:underline">meishiki.os.info@gmail.com</p>
                 </div>
               </a>
             </div>

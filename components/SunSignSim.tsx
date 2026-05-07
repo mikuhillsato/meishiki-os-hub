@@ -49,7 +49,7 @@ export default function SunSignSim() {
 
   return (
     <div className="border border-[#E0DDD6]">
-      <div className="flex items-center h-[38px] border-b border-[#0C0A08] px-5">
+      <div className="flex items-center h-[38px] border-b border-[#111111] px-5">
         <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-4">太陽星座を調べる</span>
         <div className="flex-1 h-px bg-[#E0DDD6]" />
         <span className="text-[8px] tracking-[0.3em] text-[#CCC] ml-4">Sun Sign</span>
@@ -61,7 +61,7 @@ export default function SunSignSim() {
             <input
               type="number" min={1} max={12} placeholder="例: 3"
               value={month} onChange={e => setMonth(e.target.value)}
-              className="w-full border border-[#E0DDD6] px-3 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors"
+              className="w-full border border-[#E0DDD6] px-3 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors"
             />
           </div>
           <div className="flex-1">
@@ -69,13 +69,13 @@ export default function SunSignSim() {
             <input
               type="number" min={1} max={31} placeholder="例: 21"
               value={day} onChange={e => setDay(e.target.value)}
-              className="w-full border border-[#E0DDD6] px-3 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors"
+              className="w-full border border-[#E0DDD6] px-3 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors"
             />
           </div>
           <div className="flex items-end">
             <button
               onClick={calculate}
-              className="px-5 py-2 bg-[#0C0A08] text-[#EDE8E0] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors"
+              className="px-5 py-2 bg-[#111111] text-[#F9F9F7] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors"
             >
               計算
             </button>

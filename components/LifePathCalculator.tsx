@@ -215,7 +215,7 @@ export default function LifePathCalculator() {
   return (
     <div className="border border-[#E0DDD6]">
       {/* Header */}
-      <div className="flex items-center h-[38px] border-b border-[#0C0A08] px-5">
+      <div className="flex items-center h-[38px] border-b border-[#111111] px-5">
         <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-4">数秘術 計算</span>
         <div className="flex-1 h-px bg-[#E0DDD6]" />
         <span className="text-[8px] tracking-[0.3em] text-[#CCC] ml-4">Numerology</span>
@@ -232,7 +232,7 @@ export default function LifePathCalculator() {
               type="date"
               value={date}
               onChange={e => setDate(e.target.value)}
-              className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors"
+              className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors"
             />
           </div>
           <div>
@@ -244,7 +244,7 @@ export default function LifePathCalculator() {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="例: YUKI TANAKA"
-              className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors placeholder:text-[#CCCCCC]"
+              className="w-full border border-[#E0DDD6] px-3 py-2.5 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors placeholder:text-[#CCCCCC]"
             />
             <p className="text-[9px] text-[#AAAAAA] tracking-wider mt-1.5">
               姓名の順番・スペースの有無は結果に影響しません
@@ -253,7 +253,7 @@ export default function LifePathCalculator() {
         </div>
         <button
           onClick={calculate}
-          className="mt-4 px-6 py-2.5 bg-[#0C0A08] text-[#EDE8E0] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors"
+          className="mt-4 px-6 py-2.5 bg-[#111111] text-[#F9F9F7] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333] transition-colors"
         >
           計算する
         </button>
@@ -265,7 +265,7 @@ export default function LifePathCalculator() {
           <div className="mt-6 bg-[#F4F4F2] p-4 font-mono text-sm text-[#888888] leading-loose">
             <p className="text-[8px] tracking-[0.3em] uppercase text-[#AAAAAA] mb-2">Life Path — 計算過程</p>
             {lpData.steps.map((step, i) => (
-              <p key={i} className={i === lpData.steps.length - 1 ? "text-[#0C0A08] font-bold" : ""}>
+              <p key={i} className={i === lpData.steps.length - 1 ? "text-[#111111] font-bold" : ""}>
                 {step}
               </p>
             ))}
@@ -296,7 +296,7 @@ export default function LifePathCalculator() {
 
         {/* Integration reading */}
         {integration && (
-          <div className="mt-6 bg-[#0C0A08] p-6 md:p-8">
+          <div className="mt-6 bg-[#111111] p-6 md:p-8">
             <p className="text-[8px] tracking-[0.5em] uppercase mb-5 text-[#555555]">
               Integration — 三つの数字が語ること
             </p>
@@ -333,7 +333,7 @@ function NumberCard({
       <p className="text-[9px] tracking-wider text-[#AAAAAA] mb-3">{labelJa}</p>
       <div className="flex items-baseline gap-3 mb-3">
         <span className="font-display text-6xl font-light text-[#CCCCCC] leading-none">{num}</span>
-        <span className="text-xs text-[#0C0A08] tracking-wider">{m?.keyword}</span>
+        <span className="text-xs text-[#111111] tracking-wider">{m?.keyword}</span>
       </div>
       <p className="text-sm text-[#555555] leading-loose tracking-wider">{m?.[role]}</p>
     </div>
@@ -342,7 +342,7 @@ function NumberCard({
 
 function EmptyCard({ label, labelJa, hint }: { label: string; labelJa: string; hint: string }) {
   return (
-    <div className="bg-[#EDE8E0] p-6 flex flex-col justify-center">
+    <div className="bg-[#F9F9F7] p-6 flex flex-col justify-center">
       <p className="text-[8px] tracking-[0.3em] uppercase text-[#CCCCCC] mb-0.5">{label}</p>
       <p className="text-[9px] tracking-wider text-[#DDDDDD] mb-3">{labelJa}</p>
       <p className="text-xs text-[#CCCCCC] tracking-wider leading-loose">{hint}</p>

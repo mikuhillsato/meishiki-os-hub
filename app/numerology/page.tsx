@@ -23,18 +23,18 @@ const lifePathMeanings = [
 
 function HowToCalculate() {
   return (
-    <div className="bg-[#0C0A08] text-[#EDE8E0] p-8 md:p-12">
+    <div className="bg-[#111111] text-[#F9F9F7] p-8 md:p-12">
       <p className="text-xs tracking-[0.2em] text-[#888888] mb-4 uppercase">How to Calculate</p>
       <h3 className="font-display text-3xl font-light mb-6">ライフパスナンバーの計算法</h3>
       <p className="text-sm text-[#888888] leading-loose tracking-wider mb-8">
         生年月日のすべての数字を足し合わせ、1桁（または11・22・33）になるまで繰り返す。
       </p>
-      <div className="bg-[#EDE8E0] p-6 font-mono text-sm text-[#888888] leading-loose">
+      <div className="bg-[#F9F9F7] p-6 font-mono text-sm text-[#888888] leading-loose">
         <p className="text-[#888888] text-xs mb-2">例：1990年3月15日生まれの場合</p>
         <p>1 + 9 + 9 + 0 + 0 + 3 + 1 + 5 = 28</p>
-        <p>2 + 8 = <span className="text-[#0C0A08] font-bold">10</span></p>
-        <p>1 + 0 = <span className="text-[#0C0A08] font-bold">1</span></p>
-        <p className="mt-4 text-[#0C0A08]">→ ライフパスナンバーは <span className="text-[#888888]">1</span></p>
+        <p>2 + 8 = <span className="text-[#111111] font-bold">10</span></p>
+        <p>1 + 0 = <span className="text-[#111111] font-bold">1</span></p>
+        <p className="mt-4 text-[#111111]">→ ライフパスナンバーは <span className="text-[#888888]">1</span></p>
       </div>
       <p className="text-xs text-[#888888] tracking-wider mt-4">
         ※ 途中で11・22・33が出た場合はそのまま保持する（マスターナンバー）
@@ -46,7 +46,7 @@ function HowToCalculate() {
 export default function NumerologyPage() {
   return (
     <>
-      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Numerology — meishiki OS
@@ -89,7 +89,7 @@ export default function NumerologyPage() {
 
         {/* Simulation */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-8">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
             <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
@@ -99,7 +99,7 @@ export default function NumerologyPage() {
 
         {/* Key numbers */}
         <section className="mb-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-10">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">core numbers</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
@@ -134,7 +134,7 @@ export default function NumerologyPage() {
               <div key={item.name} className="bg-[#F4F4F2] p-8">
                 <p className="text-xs tracking-[0.2em] text-[#888888] mb-1 uppercase">{item.en}</p>
                 <h3 className="font-display text-2xl font-light mb-2">{item.name}</h3>
-                <p className="text-xs text-[#0C0A08] tracking-wider mb-4">導出元：{item.source}</p>
+                <p className="text-xs text-[#111111] tracking-wider mb-4">導出元：{item.source}</p>
                 <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}
@@ -151,7 +151,7 @@ export default function NumerologyPage() {
                 <p className="font-display text-6xl text-[#CCCCCC] font-light mb-3 leading-none">
                   {item.number}
                 </p>
-                <p className="text-xs text-[#0C0A08] tracking-wider mb-3">{item.keyword}</p>
+                <p className="text-xs text-[#111111] tracking-wider mb-3">{item.keyword}</p>
                 <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
               </div>
             ))}

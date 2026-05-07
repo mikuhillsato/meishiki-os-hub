@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#0C0A08] mt-24">
+    <footer className="border-t border-[#111111] mt-24">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           <div className="md:col-span-2">
@@ -19,7 +19,7 @@ export default function Footer() {
                   href="https://x.com/meishikiOS"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[10px] tracking-[0.2em] text-[#888888] hover:text-[#0C0A08] transition-colors"
+                  className="text-[10px] tracking-[0.2em] text-[#888888] hover:text-[#111111] transition-colors"
                   aria-label="X (@meishikiOS)"
                 >
                   𝕏 @meishikiOS
@@ -30,7 +30,7 @@ export default function Footer() {
                   href="https://note.com/meishiki_os"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[10px] tracking-[0.2em] text-[#888888] hover:text-[#0C0A08] transition-colors"
+                  className="text-[10px] tracking-[0.2em] text-[#888888] hover:text-[#111111] transition-colors"
                   aria-label="Note (meishiki_os)"
                 >
                   N note
@@ -39,7 +39,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:meishiki.os.info@gmail.com"
-                  className="text-[10px] tracking-[0.2em] text-[#888888] hover:text-[#0C0A08] transition-colors"
+                  className="text-[10px] tracking-[0.2em] text-[#888888] hover:text-[#111111] transition-colors"
                   aria-label="Email"
                 >
                   @ email
@@ -57,7 +57,7 @@ export default function Footer() {
                 { label: "数秘術", href: "/numerology" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-xs text-[#888888] hover:text-[#0C0A08] tracking-wider transition-colors">
+                  <Link href={l.href} className="text-xs text-[#888888] hover:text-[#111111] tracking-wider transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -68,7 +68,7 @@ export default function Footer() {
             <p className="text-[8px] tracking-[0.4em] text-[#888888] mb-4 uppercase">About</p>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-xs text-[#888888] hover:text-[#0C0A08] tracking-wider transition-colors">
+                <Link href="/about" className="text-xs text-[#888888] hover:text-[#111111] tracking-wider transition-colors">
                   このサイトについて
                 </Link>
               </li>

@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-space: #EDE8E0;
-  --color-surface: #F4F0E8;
-  --color-border: #D8D2C5;
-  --color-text: #0C0A08;
-  --color-muted: #888272;
-  --color-accent: #0C0A08;
+  --color-space: #F9F9F7;
+  --color-surface: #F4F4F2;
+  --color-border: #E0DDD6;
+  --color-text: #111111;
+  --color-muted: #888888;
+  --color-accent: #111111;
   --color-purple: #6D28D9;
   --color-gold: #B8860B;
   --font-display: var(--font-cormorant);
@@ -19,8 +19,8 @@ html {
 }
 
 body {
-  background-color: #EDE8E0;
-  color: #0C0A08;
+  background-color: #F9F9F7;
+  color: #111111;
   font-family: var(--font-body), "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -30,8 +30,8 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background-color: #0C0A08;
-  color: #EDE8E0;
+  background-color: #111111;
+  color: #F9F9F7;
 }
 
 /* meishikiOS ロゴ：Outfit weight100 + Royal Eclipse グラデ ────────── */

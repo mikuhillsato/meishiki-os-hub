@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <div className="grid border-b border-[#0C0A08] grid-cols-[52px_1fr] md:grid-cols-[52px_1fr_320px]">
+      <div className="grid border-b border-[#111111] grid-cols-[52px_1fr] md:grid-cols-[52px_1fr_320px]">
         {/* 縦ラベル */}
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
 
         {/* 本文 */}
-        <div className="px-6 md:px-12 py-10 md:py-16 md:border-r border-[#0C0A08] flex flex-col justify-between min-h-[380px] md:min-h-[480px]">
+        <div className="px-6 md:px-12 py-10 md:py-16 md:border-r border-[#111111] flex flex-col justify-between min-h-[380px] md:min-h-[480px]">
           <div>
             <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-7">
               占いは、当てるものじゃない。知るためのものだ。
@@ -124,13 +124,13 @@ export default function Home() {
           <div className="flex items-center flex-wrap gap-2">
             <Link
               href="/shichusuimei"
-              className="text-[9px] tracking-[0.3em] uppercase px-7 py-3 bg-[#0C0A08] text-[#EDE8E0] hover:bg-[#333333] transition-colors"
+              className="text-[9px] tracking-[0.3em] uppercase px-7 py-3 bg-[#111111] text-[#F9F9F7] hover:bg-[#333333] transition-colors"
             >
               探索する
             </Link>
             <Link
               href="#systems"
-              className="text-[9px] tracking-[0.2em] uppercase px-6 py-3 text-[#888888] hover:text-[#0C0A08] transition-colors flex items-center gap-2"
+              className="text-[9px] tracking-[0.2em] uppercase px-6 py-3 text-[#888888] hover:text-[#111111] transition-colors flex items-center gap-2"
             >
               <span className="inline-block w-4 h-px bg-[#CCC]" />
               占術を選ぶ
@@ -139,7 +139,7 @@ export default function Home() {
         </div>
 
         {/* Orbital Blueprint motif - hidden on mobile */}
-        <div className="hidden md:flex items-center justify-center p-10 bg-[#EDE8E0]">
+        <div className="hidden md:flex items-center justify-center p-10 bg-[#F9F9F7]">
           <OrbitalMotif />
         </div>
       </div>
@@ -150,7 +150,7 @@ export default function Home() {
       {/* SYSTEMS */}
       <div id="systems">
         {/* ヘッダー */}
-        <div className="flex items-center px-6 h-[38px] border-b border-[#0C0A08]">
+        <div className="flex items-center px-6 h-[38px] border-b border-[#111111]">
           <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">Four Systems</span>
           <div className="flex-1 h-px bg-[#E0DDD6]" />
           <span className="font-display text-[11px] text-[#CCC] ml-5 tracking-[0.1em]">i — iv</span>
@@ -186,7 +186,7 @@ export default function Home() {
       {/* PHILOSOPHY */}
       <section
         className="py-10 px-6 md:py-16 md:px-12 flex flex-col gap-6 md:grid md:gap-x-10 md:items-start md:grid-cols-[80px_1fr_1fr]"
-        style={{ backgroundColor: "#0C0A08" }}
+        style={{ backgroundColor: "#111111" }}
       >
         <div className="hidden md:block font-display text-[120px] leading-[0.7] italic" style={{ color: "#2A2A2A" }}>&ldquo;</div>
         <div>
@@ -194,7 +194,7 @@ export default function Home() {
             Philosophy
             <span className="flex-1 h-px" style={{ background: "#2A2A2A" }} />
           </p>
-          <p className="font-display text-[26px] md:text-[30px] font-light italic leading-relaxed" style={{ color: "#EDE8E0" }}>
+          <p className="font-display text-[26px] md:text-[30px] font-light italic leading-relaxed" style={{ color: "#F9F9F7" }}>
             「知ること」は、<br />
             「選ぶこと」の始まり。
           </p>

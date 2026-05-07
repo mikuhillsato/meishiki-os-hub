@@ -253,12 +253,12 @@ export default function AstrologySim() {
     { glyph:"DC",label:"DSC（下降宮）",en:"Descendant", key:"dsc"  as const, desc: SD[chart.dsc.sign].dsc  },
   ] : [];
 
-  const selectCls = "border border-[#E0DDD6] px-2 py-2 text-sm text-[#0C0A08] bg-[#EDE8E0] focus:outline-none focus:border-[#0C0A08] transition-colors";
+  const selectCls = "border border-[#E0DDD6] px-2 py-2 text-sm text-[#111111] bg-[#F9F9F7] focus:outline-none focus:border-[#111111] transition-colors";
 
   return (
     <div className="border border-[#E0DDD6]">
       {/* Header */}
-      <div className="flex items-center h-[38px] border-b border-[#0C0A08] px-5">
+      <div className="flex items-center h-[38px] border-b border-[#111111] px-5">
         <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-4">ホロスコープ簡易計算</span>
         <div className="flex-1 h-px bg-[#E0DDD6]" />
         <span className="text-[8px] tracking-[0.3em] text-[#CCC] ml-4">Western Astrology</span>
@@ -297,7 +297,7 @@ export default function AstrologySim() {
           </div>
           {/* Button */}
           <button onClick={calculate}
-            className="px-6 py-2 bg-[#0C0A08] text-[#EDE8E0] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333333] transition-colors">
+            className="px-6 py-2 bg-[#111111] text-[#F9F9F7] text-[9px] tracking-[0.3em] uppercase hover:bg-[#333333] transition-colors">
             計算
           </button>
         </div>
@@ -314,8 +314,8 @@ export default function AstrologySim() {
                 return (
                   <div key={r.key} className="bg-[#F4F4F2] p-4">
                     <p className="font-display text-[11px] text-[#888888] mb-2">{r.glyph}</p>
-                    <div className="mb-1"><ZodiacGlyph sign={p.sign} size={36} color="#0C0A08" /></div>
-                    <p className="font-display text-[13px] font-light text-[#0C0A08] leading-tight">{p.sign}</p>
+                    <div className="mb-1"><ZodiacGlyph sign={p.sign} size={36} color="#111111" /></div>
+                    <p className="font-display text-[13px] font-light text-[#111111] leading-tight">{p.sign}</p>
                     <p className="text-[8px] text-[#888888] mt-0.5">{p.deg}° {p.element}</p>
                     <p className="text-[9px] text-[#555555] leading-relaxed tracking-wider mt-2 hidden md:block">
                       {SD[p.sign].core}
@@ -330,15 +330,15 @@ export default function AstrologySim() {
               {rows.map(r => {
                 const p = chart[r.key];
                 return (
-                  <div key={r.key} className="bg-[#EDE8E0] p-4 flex gap-4 items-start">
+                  <div key={r.key} className="bg-[#F9F9F7] p-4 flex gap-4 items-start">
                     <div className="w-28 shrink-0">
                       <p className="text-[8px] tracking-[0.25em] uppercase text-[#888888]">{r.en}</p>
-                      <p className="font-display text-sm font-light text-[#0C0A08] mt-0.5">{r.label}</p>
+                      <p className="font-display text-sm font-light text-[#111111] mt-0.5">{r.label}</p>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <ZodiacGlyph sign={p.sign} size={22} color="#0C0A08" />
-                        <span className="font-display text-base font-light text-[#0C0A08]">{p.sign}</span>
+                        <ZodiacGlyph sign={p.sign} size={22} color="#111111" />
+                        <span className="font-display text-base font-light text-[#111111]">{p.sign}</span>
                         <span className="text-[9px] text-[#CCC]">{p.deg}°</span>
                       </div>
                       <p className="text-xs text-[#555555] leading-relaxed tracking-wider">{r.desc}</p>
@@ -349,7 +349,7 @@ export default function AstrologySim() {
             </div>
 
             {/* Reading */}
-            <div style={{ backgroundColor: "#0C0A08" }} className="p-6">
+            <div style={{ backgroundColor: "#111111" }} className="p-6">
               <p className="text-[8px] tracking-[0.5em] uppercase mb-5" style={{ color: "#555555" }}>
                 Reading — 星の配置が語ること
               </p>

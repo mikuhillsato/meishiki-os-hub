@@ -96,7 +96,7 @@ const houses = [
 export default function HousesPage() {
   return (
     <>
-      <div className="grid border-b border-[#0C0A08]" style={{ gridTemplateColumns: "52px 1fr" }}>
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
         <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
           <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
             Houses — Western Astrology
@@ -104,7 +104,7 @@ export default function HousesPage() {
         </div>
         <div className="px-4 md:px-12 py-6 md:py-12">
           <div className="flex items-center gap-2 text-[8px] tracking-[0.3em] text-[#888888] mb-5 uppercase">
-            <Link href="/astrology" className="hover:text-[#0C0A08] transition-colors">西洋占星術</Link>
+            <Link href="/astrology" className="hover:text-[#111111] transition-colors">西洋占星術</Link>
             <span>/</span>
             <span>ハウスの意味</span>
           </div>
@@ -129,7 +129,7 @@ export default function HousesPage() {
                 <div>
                   <p className="text-xs tracking-[0.2em] text-[#888888] mb-1 uppercase">{house.en}</p>
                   <h2 className="font-display text-2xl font-light mb-1">{house.name}</h2>
-                  <p className="text-xs text-[#0C0A08] tracking-wider mb-3">{house.keyword}</p>
+                  <p className="text-xs text-[#111111] tracking-wider mb-3">{house.keyword}</p>
                   <p className="text-sm text-[#555555] leading-loose tracking-wider">{house.desc}</p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function HousesPage() {
 
         {/* Related pages */}
         <section className="mt-20">
-          <div className="flex items-center h-[38px] border-t border-b border-[#0C0A08] mb-0">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
             <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
             <div className="flex-1 h-px bg-[#E0DDD6]" />
           </div>
