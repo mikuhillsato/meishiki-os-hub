@@ -1,0 +1,162 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import ElementVisual from "@/components/ElementVisual";
+import ShichusuimeiSim from "@/components/ShichusuimeiSim";
+
+export const metadata: Metadata = {
+  title: "四柱推命",
+  description: "年・月・日・時の四柱から命式を読み解く中国占術。十干十二支と五行で、あなたの先天的な資質と人生の流れを知る。",
+};
+
+const subPages = [
+  {
+    href: "/shichusuimei/pillars",
+    title: "年柱・月柱・日柱・時柱",
+    titleEn: "Four Pillars",
+    desc: "四柱推命の根幹となる四つの柱。年・月・日・時それぞれが何を表し、どう読み解くか。「日柱（日主）」があなたの本質を表すコアになる。",
+  },
+  {
+    href: "/shichusuimei/stars",
+    title: "十干・十二支と星の意味",
+    titleEn: "Stems, Branches & Stars",
+    desc: "甲・乙・丙…の十干と、子・丑・寅…の十二支。五行との関係性、星（通変星）の意味、組み合わせによる命式の読み方。",
+  },
+];
+
+export default function ShichusuimeiPage() {
+  return (
+    <>
+      <div className="grid border-b border-[#111111]" style={{ gridTemplateColumns: "52px 1fr" }}>
+        <div className="border-r border-[#E0DDD6] flex items-center justify-center bg-[#F4F4F2]">
+          <span style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontSize: "8px", letterSpacing: "0.5em", textTransform: "uppercase", color: "#BBB", whiteSpace: "nowrap" }}>
+            Four Pillars of Destiny — meishiki OS
+          </span>
+        </div>
+        <div className="px-4 md:px-12 py-8 md:py-16">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-[#888888] mb-5">03 — Four Pillars of Destiny</p>
+          <h1 className="font-display font-light leading-[0.95]" style={{ fontSize: "clamp(44px,5.5vw,76px)" }}>
+            四柱推命
+          </h1>
+          <p className="text-sm text-[#555555] leading-loose tracking-wider max-w-lg mt-6">
+            中国数千年の歴史を持つ命理学。生まれた年・月・日・時刻の四つの柱と、
+            十干・十二支・五行の組み合わせから命式を読み解く。
+            運命を「当てる」のではなく、先天的な資質と後天的な流れを「知る」ための体系。
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        {/* Overview */}
+        <section className="mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="font-display italic text-[#888888] text-lg mb-4">overview</p>
+              <h2 className="font-display text-4xl font-light mb-6">四柱推命とは</h2>
+              <p className="text-sm text-[#555555] leading-loose tracking-wider mb-4">
+                四柱推命（しちゅうすいめい）とは、生年月日時を「年柱・月柱・日柱・時柱」の四つの柱に変換し、
+                それぞれに十干（甲乙丙丁…）と十二支（子丑寅卯…）を配置して命式を作る占術。
+                この命式は「その人という木（日主）が、どんな環境（季節・気候）に生まれたか」を示す地図だ。
+              </p>
+              <p className="text-sm text-[#555555] leading-loose tracking-wider mb-4">
+                四柱推命の特徴は、その人の「気質・資質・弱点・才能」という先天的な要素と、
+                「大運・流年」という時間の流れ（後天的な運気）を同時に読める点にある。
+                西洋占星術が空間（惑星配置）を重視するのに対し、四柱推命は時間（生まれた時刻）を起点にする。
+              </p>
+              <p className="text-sm text-[#555555] leading-loose tracking-wider">
+                なお「時柱」は正確な出生時刻が必要になるため、時刻が不明な場合は年・月・日の三柱で読むこともある。
+              </p>
+            </div>
+            <div className="bg-[#111111] text-[#F9F9F7] p-8">
+              <p className="text-xs tracking-[0.2em] text-[#888888] mb-6 uppercase">Five Elements — 五行</p>
+              <div className="space-y-3">
+                {[
+                  { element: "木 (Wood)", trait: "成長・柔軟・上昇志向", visual: "wood" as const },
+                  { element: "火 (Fire)", trait: "情熱・表現・直感", visual: "fire" as const },
+                  { element: "土 (Earth)", trait: "安定・実直・調和", visual: "earth" as const },
+                  { element: "金 (Metal)", trait: "厳格・決断・鋭さ", visual: "metal" as const },
+                  { element: "水 (Water)", trait: "智慧・流動・深み", visual: "water" as const },
+                ].map((item) => (
+                  <div key={item.element} className="flex gap-4 items-center border-b border-[#1E2240] pb-3 last:border-0 last:pb-0">
+                    <ElementVisual element={item.visual} />
+                    <div>
+                      <span className="font-display text-[#888888] text-lg block leading-tight">{item.element}</span>
+                      <span className="text-xs text-[#888888] tracking-wider">{item.trait}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What you can know */}
+        <section className="mb-20">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-10">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">what you can know</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+          </div>
+          <h2 className="font-display text-4xl font-light mb-10 text-center">四柱推命で分かること</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#EAEAE6]">
+            {[
+              {
+                title: "先天的な気質",
+                desc: "日主（日柱の天干）があなたの本質を表す。木・火・土・金・水のどの性質が強いかで、思考の癖・感情の動き・人間関係のスタイルが分かる。",
+              },
+              {
+                title: "才能と適性",
+                desc: "命式中の通変星（食神・傷官・財星・官星・印星など）のバランスから、どの分野で力を発揮しやすいかが見える。表現・管理・創造・奉仕…それぞれに対応する星がある。",
+              },
+              {
+                title: "人生の大きな流れ",
+                desc: "10年ごとに変わる「大運」と年ごとの「流年」が、いつ追い風が吹き、いつ内側を固める時期かを示す。時代を読んで動くための羅針盤になる。",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-[#F4F4F2] p-8">
+                <h3 className="font-display text-xl font-light mb-4 text-[#111111]">{item.title}</h3>
+                <p className="text-sm text-[#555555] leading-loose tracking-wider">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Simulation */}
+        <section className="mb-12">
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-8">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">シミュレーション</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+            <span className="text-[8px] tracking-[0.3em] text-[#CCC] mr-5">Try it</span>
+          </div>
+          <ShichusuimeiSim />
+        </section>
+
+        {/* Sub-pages */}
+        <section>
+          <div className="flex items-center h-[38px] border-t border-b border-[#111111] mb-0">
+            <span className="text-[8px] tracking-[0.5em] uppercase text-[#888888] mr-5">さらに深く学ぶ</span>
+            <div className="flex-1 h-px bg-[#E0DDD6]" />
+          </div>
+          <div>
+            {subPages.map((page, i) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="group flex flex-col md:grid border-b border-[#E8E8E4] hover:bg-[#F4F4F2] transition-colors last:border-b-0 md:grid-cols-[72px_220px_1fr]"
+              >
+                <div className="hidden md:flex border-r border-[#E8E8E4] items-start pt-6 pl-5">
+                  <span className="font-display text-[12px] tracking-[0.15em] text-[#CCC]">0{i + 1} —</span>
+                </div>
+                <div className="md:border-r border-[#E8E8E4] flex flex-col justify-center px-5 md:px-6 py-4 md:py-6">
+                  <p className="text-[8px] tracking-[0.35em] uppercase text-[#AAA] mb-1">{page.titleEn}</p>
+                  <h3 className="font-display text-[20px] font-light group-hover:opacity-60 transition-opacity">{page.title} <span className="text-[#888]">→</span></h3>
+                </div>
+                <div className="flex items-center px-5 md:px-8 pb-4 pt-0 md:py-6">
+                  <p className="text-[11px] leading-loose tracking-wider text-[#666666]">{page.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}

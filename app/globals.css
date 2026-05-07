@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space: #F9F9F7;
+  --color-surface: #F4F4F2;
+  --color-border: #E0DDD6;
+  --color-text: #111111;
+  --color-muted: #888888;
+  --color-accent: #111111;
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-noto);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F9F9F7;
+  color: #111111;
+  font-family: var(--font-body), "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), "Georgia", serif;
+}
+
+::selection {
+  background-color: #111111;
+  color: #F9F9F7;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1;    transform: scale(1); }
+  40%       { opacity: 0.08; transform: scale(0.6); }
+  70%       { opacity: 0.6;  transform: scale(1.1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
