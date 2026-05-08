@@ -17,12 +17,49 @@ const STAGE_LABEL: Record<string, { jp: string; en: string }> = {
 
 const STAGE_ORDER = ["calculating", "mini", "parallel", "rendering", "ready"];
 
+/** ステージごとの想定到達進捗と典型所要時間（ローカル creep 用）。
+ *  実 API の progress を超えない範囲で、ステージ滞在中もバーをじわじわ進める。 */
+const STAGE_BUDGET: Record<
+  string,
+  { startProg: number; endProg: number; typicalSec: number }
+> = {
+  calculating: { startProg: 1,  endProg: 15,  typicalSec: 3 },
+  mini:        { startProg: 15, endProg: 49,  typicalSec: 45 },
+  parallel:    { startProg: 50, endProg: 91,  typicalSec: 35 },
+  rendering:   { startProg: 92, endProg: 99,  typicalSec: 3 },
+  ready:       { startProg: 100, endProg: 100, typicalSec: 1 },
+};
+
 export default function DiagnosisResultClient({ jobId }: { jobId: string }) {
-  const [progress, setProgress] = useState(1);
+  const [apiProgress, setApiProgress] = useState(1);
   const [stage, setStage] = useState<string>("calculating");
+  const [displayProgress, setDisplayProgress] = useState(1);
   const [error, setError] = useState<string>("");
   const startedAtRef = useRef<number>(Date.now());
+  const stageStartedAtRef = useRef<number>(Date.now());
+  const lastStageRef = useRef<string>("calculating");
 
+  /* ─── ローカル micro-progress: ステージ内でも推定値でバーを伸ばす ─── */
+  useEffect(() => {
+    if (lastStageRef.current !== stage) {
+      lastStageRef.current = stage;
+      stageStartedAtRef.current = Date.now();
+    }
+    const tick = () => {
+      const budget = STAGE_BUDGET[stage] || STAGE_BUDGET.calculating;
+      const elapsedSec = (Date.now() - stageStartedAtRef.current) / 1000;
+      const fraction = Math.min(1, elapsedSec / Math.max(1, budget.typicalSec));
+      const localEst = budget.startProg + (budget.endProg - budget.startProg) * fraction;
+      // 実 API 値を下回らない / 同ステージのcap (endProg) を超えない / 単調増加
+      const target = Math.max(apiProgress, Math.min(budget.endProg, Math.round(localEst)));
+      setDisplayProgress((prev) => (target > prev ? target : prev));
+    };
+    tick();
+    const id = setInterval(tick, 250);
+    return () => clearInterval(id);
+  }, [stage, apiProgress]);
+
+  /* ─── API ポーリング ─── */
   useEffect(() => {
     let cancelled = false;
     const ORIGINAL_TITLE = document.title;
@@ -61,7 +98,7 @@ export default function DiagnosisResultClient({ jobId }: { jobId: string }) {
           }
           if (res.status === 202) {
             const body = (await res.json()) as { status: string; progress: number; stage: string };
-            setProgress(body.progress ?? 1);
+            setApiProgress(body.progress ?? 1);
             setStage(body.stage ?? "calculating");
             document.title = `${body.progress ?? 1}% ・ meishiki OS`;
             await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
@@ -80,7 +117,6 @@ export default function DiagnosisResultClient({ jobId }: { jobId: string }) {
           document.title = ORIGINAL_TITLE;
           return;
         } catch {
-          // network blip — wait and retry
           await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
         }
       }
@@ -95,6 +131,7 @@ export default function DiagnosisResultClient({ jobId }: { jobId: string }) {
 
   const stageInfo = STAGE_LABEL[stage] || STAGE_LABEL.calculating;
   const stageIdx = STAGE_ORDER.indexOf(stage);
+  const progress = displayProgress;
 
   if (error) {
     return (
