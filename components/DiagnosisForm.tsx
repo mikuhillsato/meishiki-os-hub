@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const API_BASE = "https://meishiki-os.onrender.com";
 
@@ -85,50 +86,8 @@ async function startDiagnosis(payload: Record<string, string>): Promise<string> 
   return data.job_id;
 }
 
-async function pollDiagnosis(jobId: string): Promise<string> {
-  const POLL_INTERVAL_MS = 2500;
-  const MAX_POLL_DURATION_MS = 240000;
-  const startedAt = Date.now();
-
-  while (Date.now() - startedAt < MAX_POLL_DURATION_MS) {
-    if (typeof document !== "undefined" && document.hidden) {
-      await new Promise<void>((resolve) => {
-        const handler = () => {
-          if (!document.hidden) {
-            document.removeEventListener("visibilitychange", handler);
-            resolve();
-          }
-        };
-        document.addEventListener("visibilitychange", handler);
-      });
-    }
-
-    try {
-      const res = await fetch(`${API_BASE}/diagnosis/${jobId}`, { cache: "no-store" });
-      if (res.status === 200) return await res.text();
-      if (res.status === 202) {
-        await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
-        continue;
-      }
-      if (res.status === 404) throw new Error("診断ジョブが見つかりません。再度お試しください。");
-      let msg = "診断処理でエラーが発生しました";
-      try {
-        const t = await res.text();
-        msg = JSON.parse(t).detail || msg;
-      } catch {}
-      throw new Error(msg);
-    } catch (e) {
-      if (e instanceof TypeError) {
-        await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
-        continue;
-      }
-      throw e;
-    }
-  }
-  throw new Error("診断がタイムアウトしました。再度お試しください。");
-}
-
 export default function DiagnosisForm() {
+  const router = useRouter();
   const [year, setYear] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
@@ -157,19 +116,13 @@ export default function DiagnosisForm() {
     if (place) payload.birth_place = place;
 
     setLoading(true);
-    document.title = "診断中… ・ meishiki OS";
     try {
       const jobId = await startDiagnosis(payload);
-      const html = await pollDiagnosis(jobId);
-      try { sessionStorage.removeItem("diagnosis_job_id"); } catch {}
-      document.open();
-      document.write(html);
-      document.close();
+      // 結果ページへ遷移（skeleton + progress polling）
+      router.push(`/diagnosis/result/${jobId}`);
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : "エラーが発生しました";
       setError(msg);
-      document.title = "OS診断（無料） | meishiki OS";
-    } finally {
       setLoading(false);
     }
   }
