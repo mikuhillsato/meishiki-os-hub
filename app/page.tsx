@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ParallaxBand from "@/components/ParallaxBand";
 import OrbitalMotif from "@/components/OrbitalMotif";
+import DiagnosisForm from "@/components/DiagnosisForm";
 
 export const metadata: Metadata = {
   title: "meishiki OS | 命式は、あなたのOSだ。",
@@ -185,7 +186,7 @@ export default function Home() {
 
       {/* PHILOSOPHY */}
       <section
-        className="py-10 px-6 md:py-16 md:px-12 flex flex-col gap-6 md:grid md:gap-x-10 md:items-start md:grid-cols-[80px_1fr_1fr]"
+        className="py-10 px-6 md:py-16 md:px-12 flex flex-col gap-6 md:grid md:gap-x-10 md:items-start md:grid-cols-[80px_1fr_1fr] border-b border-[#2A2A2A]"
         style={{ backgroundColor: "#111111" }}
       >
         <div className="hidden md:block font-display text-[120px] leading-[0.7] italic" style={{ color: "#2A2A2A" }}>&ldquo;</div>
@@ -209,6 +210,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* FREE MINI DIAGNOSIS — primary conversion */}
+      <DiagnosisForm />
     </>
   );
 }
